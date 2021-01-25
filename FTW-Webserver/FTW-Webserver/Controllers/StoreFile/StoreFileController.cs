@@ -1,42 +1,32 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace FTWWebserver.Controllers.StoreFile
 {
-    [Route("api/[controller]")]
+    [Route("api/StoreFile")]
     [ApiController]
     public class StoreFileController : ControllerBase
     {
-        // GET: api/<StoreFileController>
+        private readonly ILogger<StoreFileController> _logger;
+        private readonly StoreFilePresentation _presentation;
+
+        public StoreFileController(ILogger<StoreFileController> logger, StoreFilePresentation presentation)
+        {
+            _logger = logger;
+            _presentation = presentation;
+        }
+
         [HttpGet]
-        public IEnumerable<string> Get()
+        [Route("Store")]
+        public IActionResult Get(string Base64Image)
         {
-            return new string[] { "value1", "value2" };
-        }
+            _logger.LogInformation("Imagem recebida");
 
-        // GET api/<StoreFileController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<StoreFileController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<StoreFileController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<StoreFileController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            var input = StoreFileAdapter.ToStoreFileInput(Base64Image);
+            
+            return Ok();
         }
     }
 }
