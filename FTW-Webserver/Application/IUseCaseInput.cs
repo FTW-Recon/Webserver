@@ -1,4 +1,4 @@
-﻿namespace Application
+﻿namespace FTWWebserver.Application
 {
     public interface IUseCaseInput
     {

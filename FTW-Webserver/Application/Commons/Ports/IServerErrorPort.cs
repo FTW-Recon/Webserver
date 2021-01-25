@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.Commons.Ports
+namespace FTWWebserver.Application.Commons.Ports
 {
     public interface IServerErrorPort
     {

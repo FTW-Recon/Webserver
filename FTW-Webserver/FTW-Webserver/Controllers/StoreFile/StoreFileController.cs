@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Application;
-using Application.StoreFile.Boundaries;
+using FTWWebserver.Application;
+using FTWWebserver.Application.StoreFile.Boundaries;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -29,11 +29,11 @@ namespace FTWWebserver.Controllers.StoreFile
 
         [HttpGet]
         [Route("Store")]
-        public async Task<IActionResult> Store(string Base64Image)
+        public async Task<IActionResult> Store(string base64Image)
         {
             _logger.LogInformation("Imagem recebida");
 
-            var input = StoreFileAdapter.ToStoreFileInput(Base64Image);
+            var input = StoreFileAdapter.ToStoreFileInput(base64Image);
             
             await _useCase.ExecuteAsync(input);
 

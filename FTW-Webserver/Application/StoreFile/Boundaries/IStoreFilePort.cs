@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Application.Commons.Ports;
+using FTWWebserver.Application.Commons.Ports;
 
-namespace Application.StoreFile.Boundaries
+namespace FTWWebserver.Application.StoreFile.Boundaries
 {
     public interface IStoreFilePort : ISuccessPort, IValidationErrorPort, IServerErrorPort
     {

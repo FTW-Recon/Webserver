@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Application.StoreFile.Boundaries
+namespace FTWWebserver.Application.StoreFile.Boundaries
 {
     public class StoreFileInput : IUseCaseInput
     {
