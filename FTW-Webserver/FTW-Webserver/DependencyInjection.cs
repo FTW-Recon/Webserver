@@ -14,6 +14,8 @@ namespace FTWWebserver
         public static IServiceCollection AddPresentation(this IServiceCollection services)
         {
             services.AddScoped<IStoreFilePort, StoreFilePresentation>();
+            services.AddScoped<StoreFilePresentation>();
+            services.AddScoped<IStoreFilePort>(serv => serv.GetRequiredService<StoreFilePresentation>());
             return services;
         }
     }
