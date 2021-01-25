@@ -34,14 +34,14 @@ namespace FTWWebserver.Controllers.StoreFile
         {
             _logger.LogInformation("Imagem recebida");
 
-            //var input = StoreFileAdapter.ToStoreFileInput(data);
-            
-            //await _useCase.ExecuteAsync(input);
+            var input = StoreFileAdapter.ToStoreFileInput(data);
 
-            //if (_presentation.UseCaseSuccess)
-            //{
-            //    return Ok();
-            //}
+            await _useCase.ExecuteAsync(input);
+
+            if (_presentation.UseCaseSuccess)
+            {
+                return Ok();
+            }
 
             return NotFound();
         }
