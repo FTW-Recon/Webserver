@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Commons\Extensions\" />
     <Folder Include="StoreFile\Boundaries\Dtos\" />
     <Folder Include="StoreFile\Boundaries\Gateways\" />
   </ItemGroup>

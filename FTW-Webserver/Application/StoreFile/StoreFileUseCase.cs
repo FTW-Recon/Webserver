@@ -10,15 +10,18 @@ namespace Application.StoreFile
     public class StoreFileUseCase : IUseCase<StoreFileInput>
     {
         private readonly ILogger<StoreFileUseCase> _logger;
-
-        public StoreFileUseCase(ILogger<StoreFileUseCase> logger)
+        private readonly IStoreFilePort _port;
+        public StoreFileUseCase(ILogger<StoreFileUseCase> logger, IStoreFilePort port)
         {
             _logger = logger;
+            _port = port;
         }
 
         public async Task ExecuteAsync(StoreFileInput input)
         {
+            _logger.LogInformation("inicio caso de uso");
 
+            _port.Success();
         }
     }
 }

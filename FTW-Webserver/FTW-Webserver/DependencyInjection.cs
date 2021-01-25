@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Application.StoreFile.Boundaries;
+using FTWWebserver.Controllers.StoreFile;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace FTWWebserver
 {
@@ -13,7 +13,7 @@ namespace FTWWebserver
     {
         public static IServiceCollection AddPresentation(this IServiceCollection services)
         {
-            //services.AddScoped<IServ1, Impl1>();
+            services.AddScoped<IStoreFilePort, StoreFilePresentation>();
             return services;
         }
     }
