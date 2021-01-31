@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Application.StoreFile.UseCases;
 using FTWWebserver.Application.StoreFile;
 using FTWWebserver.Application.StoreFile.Boundaries;
 using Microsoft.Extensions.DependencyInjection;

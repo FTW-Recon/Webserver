@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using FTWWebserver.Application;
 using FTWWebserver.Application.Commons.Extensions;
 using FTWWebserver.Application.StoreFile.Boundaries;
 using FTWWebserver.Infrastructure;
 using Microsoft.Extensions.Logging;
 
-namespace FTWWebserver.Application.StoreFile
+namespace Application.StoreFile.UseCases
 {
     public class StoreFileUseCase : IUseCase<StoreFileInput>
     {

@@ -11,6 +11,7 @@ namespace FTWWebserver.Infrastructure
     public class DataStorageService : IDataStorageService
     {
         private readonly ILogger<DataStorageService> _logger;
+        private const string FilePath = "/home/Photos/";
         public DataStorageService(ILogger<DataStorageService> logger)
         {
             _logger = logger;
@@ -27,8 +28,8 @@ namespace FTWWebserver.Infrastructure
             try
             {
                 _logger.LogInformation($"Storing file:{file.Filename}");
-
-                using (FileStream SourceStream = System.IO.File.Open(file.Filename, FileMode.OpenOrCreate))
+                
+                using (FileStream SourceStream = System.IO.File.Open(Path.Combine(FilePath, file.Filename), FileMode.OpenOrCreate))
                 {
                     SourceStream.Seek(0, SeekOrigin.End);
                     await SourceStream.WriteAsync(file.Content, 0, file.Size);
